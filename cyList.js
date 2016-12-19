@@ -1,5 +1,5 @@
 (function () {
-    angular.module("cyTools")
+    angular.module("GTools")
     .directive("cyList", [ '$compile', function ($compile) {
         return {
             "scope"    : {
