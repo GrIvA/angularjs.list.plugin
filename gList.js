@@ -1,6 +1,6 @@
 (function () {
     angular.module("GTools")
-    .directive("cyList", [ '$compile', function ($compile) {
+    .directive("gList", [ '$compile', function ($compile) {
         return {
             "scope"    : {
                 "items" : "<",
