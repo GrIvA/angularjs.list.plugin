@@ -1,10 +1,11 @@
 (function () {
-    angular.module("GTools")
+    angular.module("gTools")
     .directive("gList", [ '$compile', function ($compile) {
         return {
-            "scope"    : {
-                "items" : "<",
-                "cb" : "&callback"
+            "scope": {
+                "items": "<",
+                "cb" : "&callback",
+                "tag": "childtag"
             },
             restrict: 'EA',
             transclude: true,
@@ -29,7 +30,8 @@
                     angular.element.each(scope.items, function(key, item) {
                         var
                             childScope = scope.$new(),
-                            childElem = angular.element('<li />');
+                            tag = scope.tag || 'li',
+                            childElem = angular.element('<' + tag + ' />');
 
                         childScope.item = item;
                         childScope.clickDispatcher = function() {
